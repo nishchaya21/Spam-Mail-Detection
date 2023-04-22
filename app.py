@@ -18,7 +18,7 @@ def predict():
     input_text = request.form['message']
     input_feature = vectorizer.transform([input_text])
     prediction = model.predict(input_feature)
-    print(prediction[0])
+    # print(prediction[0])
     # return str(prediction[0])
     return render_template("index.html", response_text = "The mail is {}".format("not spam."if prediction[0]==1 else "spam."))
 
