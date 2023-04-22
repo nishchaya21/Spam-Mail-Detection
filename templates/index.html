@@ -1,21 +1,49 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Spam Mail Prediction</title>
+	
+	<!-- Importing static css template -->
+	<link rel="stylesheet" href="../static/styles.css">
+
+	<link rel="icon" href="../static/assets/favicon.ico">
+
+	<!-- Box Icons -->
+	<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 </head>
 <body>
-	<h1>Upload Image</h1>
-	<form method="POST" action="/convert_image" enctype="multipart/form-data">
-		<input type="file" name="image">
-		<button type="submit">Convert Image</button>
-	</form>
-	<h1>Add text</h1>
-	<form method="POST" action="/predict">
-		<input type="text" name="message" id="message" placeholder="Enter your content">
-		<button type="submit">Send</button>
-	</form>
-    <br>
-    <h1>Text Output Box Example</h1>
-    <textarea rows="10" cols="50" readonly>{{response_text}}</textarea>
+
+	<!-- Image -->
+	<div class="container">
+		<center>
+			<div class="img-area">
+				<i class="bx bxs-cloud-upload icon"></i>
+				<h3>Upload Image</h3>
+				<p>Image size must be less than <span>2MB</span></p>
+			</div>
+			<form method="POST" action="/convert_image" enctype="multipart/form-data">
+				<br>
+				<input type="file" name="image">
+				<button type="submit" class="select-image">Convert Image</button>
+			</form>
+		</center>
+	</div>
+
+	<center><h3>OR</h3></center>
+	<br>
+	<!-- Text -->
+	<div class="container-1">
+		<form method="POST" action="/predict">
+			<label for="text"><h3>Add Text</h3></label>
+			<input size="20" type="text" name="message" id="message" placeholder="Enter your content">
+			<button class="btn btn-4 btn-sep icon-send" type="submit">Send</button>
+		</form>
+		<br>
+		<h2>Text Output Box Example</h2>
+		<textarea rows="10" cols="50" readonly>{{response_text}}</textarea>
+	</div>
 </body>
 </html>
