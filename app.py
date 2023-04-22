@@ -34,4 +34,4 @@ def convert_image():
     return render_template("index.html", response_text = "The mail is {}".format("not spam."if prediction[0]==1 else "spam."))
 
 if __name__ == '__main__':
-    app.run(debug=True, port=3000)
+    app.run(debug=False, port=3000)
