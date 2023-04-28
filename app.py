@@ -20,7 +20,7 @@ def predict():
     prediction = model.predict(input_feature)
     # print(prediction[0])
     # return str(prediction[0])
-    return render_template("index.html", response_text = "The mail is {}".format("not spam."if prediction[0]==1 else "spam."))
+    return render_template("index.html", response_text = "The mail is {}".format("not spam."if str(prediction[0])==1 else "spam."))
 
 @app.route('/convert_image', methods=['POST'])
 def convert_image():
@@ -31,7 +31,7 @@ def convert_image():
     input_vectors = vectorizer.transform([text])
     prediction = model.predict(input_vectors)
     # return str(prediction[0])
-    return render_template("index.html", response_text = "The mail is {}".format("not spam."if prediction[0]==1 else "spam."))
+    return render_template("index.html", response_text = "The mail is {}".format("not spam."if str(prediction[0])==1 else "spam."))
 
 if __name__ == '__main__':
     app.run(debug=False, port=3000)
