@@ -3,7 +3,7 @@ from PIL import Image
 import pytesseract
 import pickle
 
-# pytesseract.pytesseract.tesseract_cmd ='tesseract'
+pytesseract.pytesseract.tesseract_cmd ='/etc/secrets/tesseract'
 
 app = Flask(__name__)
 model = pickle.load(open("model.pkl", "rb"))
